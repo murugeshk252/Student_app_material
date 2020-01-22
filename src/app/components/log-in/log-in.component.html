@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" class="app-header">
+  <div><a href="#" target="_blank" class="positronx">ClobMind</a></div>
+  <span class="nav-tool-items">
+    <a mat-button [routerLink]="[ '/login' ]" routerLinkActive="active">Log in</a>
+    <a mat-button mat-raised-button [routerLink]="[ '/register' ]" routerLinkActive="active">Register</a>
+  </span>
+</mat-toolbar>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Log in</mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form" [formGroup]="createForm" (ngSubmit)="Create(createForm.value)">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="username" formControlName="username">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput type="password" placeholder="password" formControlName="password">
+          </mat-form-field>
+        </mat-card-content>
+        <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+        <!-- [disabled]="!createForm.valid" -->
+      </form>
+    </mat-card>
+  
+  </div>
